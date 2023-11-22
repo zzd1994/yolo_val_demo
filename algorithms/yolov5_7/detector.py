@@ -23,12 +23,13 @@ class YOLOv5Detector(object):
         multi_label = config.YOLO_MULTI_LABLE
         scaleFill = config.SCALE_FILL
         batchFill = config.BATCH_FILL
+        agnostic = config.YOLO_AGNOSTIC
         # ----------------------------------------
         return cls(target_size, padding_color, conf_thres, iou_thres, device, net_conf, weight_path, classes,
-                   multi_label, scaleFill, batchFill)
+                   multi_label, scaleFill, batchFill, agnostic)
 
     def __init__(self, target_size, padding_color, conf_thres, iou_thres, device, net_conf, weight_path, classes,
-                 multi_label, scaleFill, batchFill):
+                 multi_label, scaleFill, batchFill, agnostic):
         self._target_size = target_size
         self._padding_color = padding_color
         self._conf_thres = conf_thres
@@ -36,6 +37,7 @@ class YOLOv5Detector(object):
         self._multi_label = multi_label
         self._scaleFill = scaleFill
         self._batchFill = batchFill
+        self._agnostic = agnostic
         # ----------------------------------------
         self._device = torch.device(device)
         # self._model = Model(net_conf, nc=len(classes))
@@ -72,7 +74,7 @@ class YOLOv5Detector(object):
         batch_pred = non_max_suppression(
             batch_output,
             conf_thres=self._conf_thres, iou_thres=self._iou_thres,
-            classes=None, agnostic=False, multi_label=self._multi_label
+            classes=None, agnostic=self._agnostic, multi_label=self._multi_label
         )
         # print(f'后处理{round((time.time() - s3_time) * 1000, 2)}ms')
         # ----------------------------------------
