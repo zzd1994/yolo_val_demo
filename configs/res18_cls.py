@@ -4,8 +4,8 @@ CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 # --------------------------------------------------
 
 
-# YOLO_DEVICE = "cuda:0"
-YOLO_DEVICE = "cpu"
+YOLO_DEVICE = "cuda:0"
+# YOLO_DEVICE = "cpu"
 YOLO_CLASSES = ['yellow', 'orange', 'green', 'gray', 'red', 'blue', 'white', 'golden', 'brown', 'black', 'other',
                 'back', 'front', 'unknown']
 

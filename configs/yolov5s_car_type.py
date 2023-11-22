@@ -3,8 +3,8 @@ import os
 CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 # --------------------------------------------------
 
-
-YOLO_DEVICE = "cpu"
+YOLO_DEVICE = "cuda:0"
+# YOLO_DEVICE = "cpu"
 YOLO_CLASSES = [
     'car', 'motorcycle',  'bus', 'truck'
 ]
