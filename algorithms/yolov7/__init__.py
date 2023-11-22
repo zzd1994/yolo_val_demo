@@ -1,0 +1,1 @@
+from .detector import YOLOv7Detector
