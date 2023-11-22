@@ -4,7 +4,7 @@ import numpy
 import cv2
 import torch
 # ----------------------------------------
-from algorithms.yolov5_7.utils.general import non_max_suppression, scale_coords
+from .utils.general import non_max_suppression, scale_coords
 from .models.common import DetectMultiBackend
 # --------------------------------------------------
 
