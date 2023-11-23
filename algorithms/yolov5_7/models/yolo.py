@@ -22,10 +22,10 @@ if platform.system() != 'Windows':
 
 from .common import *
 from .experimental import *
-from algorithms.yolov5_7.utils.autoanchor import check_anchor_order
-from algorithms.yolov5_7.utils.general import LOGGER, check_version, check_yaml, make_divisible, print_args
-from algorithms.yolov5_7.utils.plots import feature_visualization
-from algorithms.yolov5_7.utils.torch_utils import (fuse_conv_and_bn, initialize_weights, model_info, profile, scale_img, select_device,
+from ..utils.autoanchor import check_anchor_order
+from ..utils.general import LOGGER, check_version, check_yaml, make_divisible, print_args
+from ..utils.plots import feature_visualization
+from ..utils.torch_utils import (fuse_conv_and_bn, initialize_weights, model_info, profile, scale_img, select_device,
                                                    time_sync)
 
 try:
