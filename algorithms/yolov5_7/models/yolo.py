@@ -201,7 +201,7 @@ class DetectionModel(BaseModel):
 
         # Init weights, biases
         initialize_weights(self)
-        self.info()
+        # self.info()
         LOGGER.info('')
 
     def forward(self, x, augment=False, profile=False, visualize=False):
